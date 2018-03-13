@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pepsico GO</title>
+    <link rel="stylesheet" href="assets/css/foundation.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <script src="assets/js/foundation.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+  </head>
+  <body>
+    <div class="wrapper wrapper--auth-bg">
+      <section class="form">
+        <form class="form__auth" action="#" id="auth" method="get">
+          <p class="form__desc">Для авторизации в системе введите логин и пароль</p>
+          <div class="form__inputs-wrap">
+            <input class="form__login" placeholder="Ваш логин/e-mail" type="text" required>
+            <input class="form__password" placeholder="Пароль" type="password" required>
+          </div>
+          <p class="form__appointment-desc">Ваше направление:</p>
+          <div class="form__appointment-wrap">
+            <input class="form__appointment-input" type="radio" name="appointment" value="Маркетинг" id="marketing">
+            <label class="form__appointment-label" for="marketing">Маркетинг</label>
+            <input class="form__appointment-input" type="radio" name="appointment" value="sales" id="sales">
+            <label class="form__appointment-label" for="sales">Продажи</label>
+          </div>
+          <button class="form__auth-btn btn--inactive" type="submit" form="auth">Войти в систему</button>
+        </form>
+        <div class="form__password-reset"><span class="form__password-desc">Забыли пароль?</span><span class="form__password-desc">Восстановите его по <a class='form__reset-link' href='#'>ссылке</a></span></div>
+      </section>
+    </div>
+    <script src="assets/js/plugins.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+  </body>
+</html>
