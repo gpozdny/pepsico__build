@@ -26,54 +26,54 @@
               <div class="line1"></div>
               <div class="line2"></div>
               <div class="line3"></div>
-              <div class="filter__dropdown"><span class="filter__title title">Фильтр</span>
-                <ul class="filter__top-list">
-                  <li class="filter__top-item">
-                    <label class="filter__label" for="main-appointment">Основное направление
-                      <input class="filter__checkbox" type="checkbox" id="main-appointment" value="main-appointment" checked>
-                      <div class="filter__label-checkmark"></div>
-                    </label>
-                  </li>
-                  <li class="filter__top-item">
-                    <label class="filter__label" for="secondary-appointment">Дополнительное направление
-                      <input class="filter__checkbox" type="checkbox" id="secondary-appointment" value="secondary-appointment">
-                      <div class="filter__label-checkmark"></div>
-                    </label>
-                  </li>
-                </ul>
-                <ul class="filter__bottom-list">
-                  <li class="filter__top-item">
-                    <label class="filter__label" for="new">Только новые
-                      <input class="filter__checkbox" type="checkbox" id="new" value="new">
-                      <div class="filter__label-checkmark"></div>
-                    </label>
-                  </li>
-                  <li class="filter__top-item">
-                    <label class="filter__label" for="only-marketing">Маркетинг
-                      <input class="filter__checkbox" type="checkbox" id="only-marketing" value="only-marketing">
-                      <div class="filter__label-checkmark"></div>
-                    </label>
-                  </li>
-                  <li class="filter__top-item">
-                    <label class="filter__label" for="only-sales">Продажи
-                      <input class="filter__checkbox" type="checkbox" id="only-sales" value="only-sales">
-                      <div class="filter__label-checkmark"></div>
-                    </label>
-                  </li>
-                  <li class="filter__top-item">
-                    <label class="filter__label" for="it">IT
-                      <input class="filter__checkbox" type="checkbox" id="it" value="it">
-                      <div class="filter__label-checkmark"></div>
-                    </label>
-                  </li>
-                  <li class="filter__top-item">
-                    <label class="filter__label" for="insights">Insights
-                      <input class="filter__checkbox" type="checkbox" id="insights" value="insights">
-                      <div class="filter__label-checkmark">     </div>
-                    </label>
-                  </li>
-                </ul>
-              </div>
+            </div>
+            <div class="filter__dropdown"><span class="filter__title title">Фильтр</span>
+              <ul class="filter__top-list">
+                <li class="filter__top-item">
+                  <label class="filter__label" for="main-appointment">Основное направление
+                    <input class="filter__checkbox" type="checkbox" id="main-appointment" value="main-appointment" checked>
+                    <div class="filter__label-checkmark"></div>
+                  </label>
+                </li>
+                <li class="filter__top-item">
+                  <label class="filter__label" for="secondary-appointment">Дополнительное направление
+                    <input class="filter__checkbox" type="checkbox" id="secondary-appointment" value="secondary-appointment">
+                    <div class="filter__label-checkmark"></div>
+                  </label>
+                </li>
+              </ul>
+              <ul class="filter__bottom-list">
+                <li class="filter__top-item">
+                  <label class="filter__label" for="new">Только новые
+                    <input class="filter__checkbox" type="checkbox" id="new" value="new">
+                    <div class="filter__label-checkmark"></div>
+                  </label>
+                </li>
+                <li class="filter__top-item">
+                  <label class="filter__label" for="only-marketing">Маркетинг
+                    <input class="filter__checkbox" type="checkbox" id="only-marketing" value="only-marketing">
+                    <div class="filter__label-checkmark"></div>
+                  </label>
+                </li>
+                <li class="filter__top-item">
+                  <label class="filter__label" for="only-sales">Продажи
+                    <input class="filter__checkbox" type="checkbox" id="only-sales" value="only-sales">
+                    <div class="filter__label-checkmark"></div>
+                  </label>
+                </li>
+                <li class="filter__top-item">
+                  <label class="filter__label" for="it">IT
+                    <input class="filter__checkbox" type="checkbox" id="it" value="it">
+                    <div class="filter__label-checkmark"></div>
+                  </label>
+                </li>
+                <li class="filter__top-item">
+                  <label class="filter__label" for="insights">Insights
+                    <input class="filter__checkbox" type="checkbox" id="insights" value="insights">
+                    <div class="filter__label-checkmark">     </div>
+                  </label>
+                </li>
+              </ul>
             </div>
           </div>
           <ul class="participants-list">
@@ -107,7 +107,7 @@
               <div class="participant__middle"><span class="participant__name">Ардынцев Валентин</span><span class="participant__tag">Бриф </span></div>
               <div class="participant__right"><span class="participant__time">Осталось 4 дня</span></div>
             </li>
-            <li class="participant">
+            <li class="participant participant--active">
               <div class="participant__left"><span class="participant__icon">МН</span></div>
               <div class="participant__middle"><span class="participant__name">Ардынцев Валентин</span><span class="participant__tag">Презентация </span></div>
               <div class="participant__right"><span class="participant__time">Осталось 4 дня</span></div>
@@ -178,13 +178,13 @@
               </li>
             </ul>
             <div class="participant__assessment-rate"></div>
-            <div class="participant__assessment-comment">
-              <div class="participant__assessment-title title"><span class="participant__assessment-text">Комментарий</span></div>
-              <form class="participant__assessment-form" action="#" id="comment" method="get">
-                <input class="participant__assessment-input" type="text" placeholder="Оставьте ваш комментарий о работе">
-                <button class="btn--inactive">Отправить оценку</button>
-              </form>
-            </div>
+          </div>
+          <div class="participant__assessment-comment">
+            <div class="participant__assessment-title title"><span class="participant__assessment-text">Комментарий</span></div>
+            <form class="participant__assessment-form" action="#" id="comment" method="get">
+              <input class="participant__assessment-input" type="text" placeholder="Оставьте ваш комментарий о работе">
+              <button class="btn--inactive">Отправить оценку</button>
+            </form>
           </div>
         </section>
       </div>
