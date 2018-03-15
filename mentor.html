@@ -18,7 +18,7 @@
           <div class="header__right-credentials"><span class="header__name">Дмитрий</span><span class="header__surname">Игнатьев </span></div><a class="header__logout" href="#">Выход</a>
         </div>
       </header>
-      <div class="content">
+      <main class="content">
         <section class="content__left">
           <div class="list__title__wrap">
             <h2 class="list__title">Участники</h2>
@@ -140,12 +140,7 @@
             <li class="participant">
               <div class="participant__left"><span class="participant__icon">МН</span></div>
               <div class="participant__middle"><span class="participant__name">Ардынцев Валентин</span><span class="participant__tag">Бриф </span></div>
-              <div class="participant__right"><span class="participant__time">Осталось 4 дня</span></div>
-            </li>
-            <li class="participant">
-              <div class="participant__left"><span class="participant__icon">МН</span></div>
-              <div class="participant__middle"><span class="participant__name">Ардынцев Валентин</span><span class="participant__tag">Бриф </span></div>
-              <div class="participant__right"><span class="participant__time">Осталось 4 дня                                                                                    </span></div>
+              <div class="participant__right"><span class="participant__time">Осталось 4 дня                                                                                   </span></div>
             </li>
           </ul>
         </section>
@@ -177,7 +172,22 @@
                 <div class="participant__assessment-circle"></div><span class="participant__assessment-info">8-10 - Выше среднего</span>
               </li>
             </ul>
-            <div class="participant__assessment-rate"></div>
+            <div class="participant__rate">
+              <ul class="participant__rate-list">
+                <li class="participant__rate-item"><span class="participant__rate-title">Ориентированность на будущее</span>
+                  <div class="participant__rate-circle"></div>
+                </li>
+                <li class="participant__rate-item"><span class="participant__rate-title">Креативность</span>
+                  <div class="participant__rate-circle"></div>
+                </li>
+                <li class="participant__rate-item"><span class="participant__rate-title">Продающая история</span>
+                  <div class="participant__rate-circle"></div>
+                </li>
+                <li class="participant__rate-item"><span class="participant__rate-title">Уровень анализа</span>
+                  <div class="participant__rate-circle">                            </div>
+                </li>
+              </ul>
+            </div>
           </div>
           <div class="participant__assessment-comment">
             <div class="participant__assessment-title title"><span class="participant__assessment-text">Комментарий</span></div>
@@ -187,7 +197,7 @@
             </form>
           </div>
         </section>
-      </div>
+      </main>
     </div>
     <script src="assets/js/plugins.js" defer></script>
     <script src="assets/js/app.js" defer></script>

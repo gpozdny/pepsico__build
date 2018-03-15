@@ -32,7 +32,7 @@
                 <button class="btn--status">Успешно!</button>
               </div>
             </li>
-            <li class="profile__item">
+            <li class="profile__item" id="briefing">
               <div class="profile__title-wrap">
                 <h2 class="profile__item-title">2. Бриф    </h2>
               </div>
@@ -63,16 +63,34 @@
                 <div class="profile__item-icon profile__item-icon--finals"></div>
               </div>
               <div class="profile__item-status">
-                <button class="btn--inactive">До 1 мая               </button>
+                <button class="btn--inactive">До 1 мая                                 </button>
               </div>
             </li>
           </ul>
         </div>
       </main>
       <div class="profile__progress-bar">
-        <div class="profile__progress-percentage"></div><span class="profile__progress-text">Путь пройден на 50%         </span>
+        <div class="profile__progress-percentage"></div><span class="profile__progress-text">Путь пройден на 50%</span>
       </div>
     </div>
+    <div class="profile__modals">
+      <div class="profile__attachments">
+        <form class="profile__attachments-form" action="#">
+          <div class="profile__attachments-title"><span class="profile__attachments-text title">назовите свой проект</span></div>
+          <input class="profile__attachments-input" type="text" placeholder="Введите название проекта">
+          <label class="profile__attachments-label">
+            <input class="profile__attachments-attach" type="file" name="pic" accept="image/*">
+            <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">Приложите файл с описанием (.DOCX, максимум - 1 страница!)</span>
+          </label>
+          <label class="profile__attachments-label">
+            <input class="profile__attachments-attach" type="file" name="pic" accept="image/*">
+            <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">И прикрепите иллюстрацию</span>
+          </label>
+          <button class="profile__attachments-btn btn--inactive" type="submit">Отправить</button>
+        </form><span class="profile__modal-cross">x        </span>
+      </div>
+    </div>
+    <div class="profile__modals-overlay">                </div>
     <script src="assets/js/plugins.js" defer></script>
     <script src="assets/js/app.js" defer></script>
   </body>
