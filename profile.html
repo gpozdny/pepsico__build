@@ -44,7 +44,7 @@
               </div>
               <div class="profile__item-desc"><span class="profile__item-info">Прикрепите название проекта и слайды для выступления в финале!    </span></div>
             </li>
-            <li class="profile__item">
+            <li class="profile__item" id="presentation">
               <div class="profile__title-wrap">
                 <h2 class="profile__item-title">3. Презентация</h2>
               </div>
@@ -87,8 +87,44 @@
             <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">И прикрепите иллюстрацию</span>
           </label>
           <button class="profile__attachments-btn btn--inactive" type="submit">Отправить</button>
-        </form><span class="profile__modal-cross">x        </span>
+        </form><span class="profile__modal-cross">x </span>
       </div>
+    </div>
+    <div class="profile__modals-presentation">        
+      <div class="profile__attachments-presentation">
+        <form class="profile__attachments-form" action="#">
+          <div class="profile__attachments-title"><span class="profile__attachments-text title">проект: digital 3.0</span></div>
+          <div class="profile__attachments-picture"></div>
+          <label class="profile__attachments-label">
+            <input class="profile__attachments-attach" type="file" name="pic" accept="image/*">
+            <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">Приложите фаил с подробным описанием (.DOCX, объем не ограничен!)</span>
+          </label>
+          <label class="profile__attachments-label">
+            <input class="profile__attachments-attach" type="file" name="pic" accept="image/*">
+            <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">Прикрепите презентацию, с которой будете выступать в финале (.PPTX или .PDF)</span>
+          </label>
+          <button class="profile__attachments-btn btn--inactive" type="submit">Отправить</button>
+        </form><span class="profile__modal-cross">x</span>
+      </div>
+    </div>
+    <div class="profile__modals-fail">
+      <div class="profile__fail">
+        <div class="profile__fail-title"><span class="title title--red">вы не справились</span></div>
+        <div class="profile__fail-wrap">
+          <p class="profile__fail-red">Вы набрали недостаточно баллов для прохождения в финал по направлению</p><span class="profile__fail-tag">Маркетинг</span>
+        </div>
+        <ul class="profile__fail-list">
+          <li class="profile__fail-item"><span class="profile__fail-reason">недостаточно креативности</span></li>
+          <li class="profile__fail-item"><span class="profile__fail-reason">низкая харизма</span></li>
+        </ul>
+        <div class="profile__fail-wrap">
+          <p class="profile__fail-text">Вы ещё можете попробоватьсебя во втором выбранном вами направлении -</p><span class="profile__fail-tag profile__fail-tag--secondary">продажи</span>
+        </div>
+        <div class="profile__fail-buttons"><span class="profile__fail-text">Продолжим?</span>
+          <button class="profile__fail-btn btn--inactive btn--active">Да, продолжить!     </button>
+          <button class="profile__fail-btn btn--inactive btn--white">Нет, спасибо!</button>
+        </div>
+      </div><span class="profile__modal-cross">x             </span>
     </div>
     <div class="profile__modals-overlay">                </div>
     <script src="assets/js/plugins.js" defer></script>
