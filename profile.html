@@ -19,7 +19,12 @@
         </div>
       </header>
       <main class="profile">
-        <div class="container container--profile-list">
+        <div class="container--column container--profile">
+          <div class="profile__appointment-wrap"><span class="profile__appointment">Ваше направление</span>
+            <div class="profile__title-wrap">
+              <h2 class="profile__item-title">Маркетинг</h2>
+            </div>
+          </div>
           <ul class="profile__list">
             <li class="profile__item profile__item--success"> 
               <div class="profile__title-wrap">
@@ -44,7 +49,7 @@
               </div>
               <div class="profile__item-desc"><span class="profile__item-info">Прикрепите название проекта и слайды для выступления в финале!    </span></div>
             </li>
-            <li class="profile__item profile__item--inactive" id="presentation">
+            <li class="profile__item profile__item--opinion" id="presentation">
               <div class="profile__title-wrap">
                 <h2 class="profile__item-title">3. Презентация</h2>
               </div>
@@ -71,12 +76,11 @@
           </ul>
         </div>
       </main>
-      <div class="profile__progress-bar">
-        <div class="profile__progress-percentage"></div><span class="profile__progress-text">Путь пройден на 50%</span>
-      </div>
     </div>
     <div class="profile__modals">
+      <div class="profile__error shown"><span class="profile__error-icon">!</span><span class="profile__error-text">Ошибка при заполнении формы. Попробуйте еще раз.</span></div>
       <div class="profile__attachments">
+        <div class="profile__guide"><a class="profile__guide-link" href="#" download>Ознакомьтесь с заданием</a><span class="profile__guide-icon"> </span></div>
         <form class="profile__attachments-form" action="#">
           <div class="profile__attachments-title"><span class="profile__attachments-text title">назовите свой проект</span></div>
           <input class="profile__attachments-input" type="text" placeholder="Введите название проекта" required>
@@ -97,6 +101,7 @@
     </div>
     <div class="profile__modals-presentation">        
       <div class="profile__attachments-presentation">
+        <div class="profile__guide"><a class="profile__guide-link" href="#" download>Ознакомьтесь с заданием</a><span class="profile__guide-icon"></span></div>
         <form class="profile__attachments-form" action="#">
           <div class="profile__attachments-title"><span class="profile__attachments-text title">проект: digital 3.0</span></div>
           <div class="profile__attachments-picture"></div>
