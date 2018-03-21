@@ -79,15 +79,14 @@
           <div class="profile__attachments-title"><span class="profile__attachments-text title">назовите свой проект</span></div>
           <input class="profile__attachments-input" type="text" placeholder="Введите название проекта" required>
           <div class="profile__attachments__files">
-            <div class="participant-info__files-docx hidden" id="docx">.DOCX</div>
-            <div class="participant-info__files-presentation hidden" id="image">Image</div>
+            <div class="participant-info__files-docx hidden" id="docx">.DOCX</div><img class="participant-info__files-presentation hidden" src="" alt="Image" id="image">
           </div>
           <label class="profile__attachments-label" id="labelDocx">
             <input class="profile__attachments-attach" type="file" name="pic" onchange="changeDocx()" required>
             <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">Приложите файл с описанием (.DOCX, максимум - 1 страница!)</span>
           </label>
           <label class="profile__attachments-label" id="labelImage">
-            <input class="profile__attachments-attach" type="file" name="pic" accept="image/*" onchange="changeImage()" required>
+            <input class="profile__attachments-attach" type="file" name="pic" accept="image/*" onchange="changeImage()" id="imgInput" required>
             <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">И прикрепите иллюстрацию</span>
           </label>
           <button class="profile__attachments-btn btn--inactive" type="submit">Отправить</button>
