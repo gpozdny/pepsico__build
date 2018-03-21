@@ -21,7 +21,7 @@
       <main class="profile">
         <div class="container container--profile-list">
           <ul class="profile__list">
-            <li class="profile__item">
+            <li class="profile__item profile__item--success"> 
               <div class="profile__title-wrap">
                 <h2 class="profile__item-title">1. Видеоинтервью</h2>
               </div>
@@ -29,42 +29,44 @@
                 <div class="profile__item-icon"></div>
               </div>
               <div class="profile__item-status">
-                <button class="btn--status">Успешно!</button>
+                <button class="btn--status profile__btn">Успешно!</button>
               </div>
             </li>
-            <li class="profile__item" id="briefing">
+            <li class="profile__item profile__item--active" id="briefing">
               <div class="profile__title-wrap">
                 <h2 class="profile__item-title">2. Бриф    </h2>
               </div>
               <div class="profile__item-wrap">
-                <div class="profile__item-icon profile__item-icon--idea"></div>
+                <div class="profile__item-icon profile__item-icon--idea" id="briefingIcon"></div>
               </div>
               <div class="profile__item-status">
-                <button class="btn--status btn--assessment">На оценке!</button>
+                <button class="btn--status btn--assessment profile__btn">На оценке!</button>
               </div>
               <div class="profile__item-desc"><span class="profile__item-info">Прикрепите название проекта и слайды для выступления в финале!    </span></div>
             </li>
-            <li class="profile__item" id="presentation">
+            <li class="profile__item profile__item--inactive" id="presentation">
               <div class="profile__title-wrap">
                 <h2 class="profile__item-title">3. Презентация</h2>
               </div>
               <div class="profile__item-wrap">
-                <div class="profile__item-icon profile__item-icon--presentation"></div>
+                <div class="profile__item-icon profile__item-icon--presentation" id="presentationIcon"></div>
               </div>
               <div class="profile__item-status">
-                <button class="btn--inactive">До 13 апреля</button>
+                <button class="btn--inactive profile__btn">До 13 апреля</button>
               </div>
+              <div class="profile__item-desc"><span class="profile__item-info">Прикрепите название проекта и слайды для выступления в финале!</span></div>
             </li>
-            <li class="profile__item">
+            <li class="profile__item profile__item--inactive" id="finals">
               <div class="profile__title-wrap">
                 <h2 class="profile__item-title">4. Финалы</h2>
               </div>
               <div class="profile__item-wrap">
-                <div class="profile__item-icon profile__item-icon--finals"></div>
+                <div class="profile__item-icon profile__item-icon--finals" id="finalsIcon"></div>
               </div>
               <div class="profile__item-status">
-                <button class="btn--inactive">До 1 мая                                 </button>
+                <button class="btn--inactive profile__btn">До 1 мая</button>
               </div>
+              <div class="profile__item-desc"><span class="profile__item-info">Прикрепите название проекта и слайды для выступления в финале!                                     </span></div>
             </li>
           </ul>
         </div>
@@ -79,14 +81,14 @@
           <div class="profile__attachments-title"><span class="profile__attachments-text title">назовите свой проект</span></div>
           <input class="profile__attachments-input" type="text" placeholder="Введите название проекта" required>
           <div class="profile__attachments__files">
-            <div class="participant-info__files-docx hidden" id="docx">.DOCX</div><img class="participant-info__files-presentation hidden" src="" alt="Image" id="image">
+            <div class="participant-info__files-docx hidden" id="docx">.DOCX</div><img class="participant-info__files-img hidden" src="" alt="Image" id="image">
           </div>
           <label class="profile__attachments-label" id="labelDocx">
-            <input class="profile__attachments-attach" type="file" name="pic" onchange="changeDocx()" required>
+            <input class="profile__attachments-attach" type="file" name="pic" onchange="changeDocx()" required accept=".doc, .docx">
             <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">Приложите файл с описанием (.DOCX, максимум - 1 страница!)</span>
           </label>
           <label class="profile__attachments-label" id="labelImage">
-            <input class="profile__attachments-attach" type="file" name="pic" accept="image/*" onchange="changeImage()" id="imgInput" required>
+            <input class="profile__attachments-attach" type="file" name="pic" accept="image/*" onchange="changeImage(); previewFile();" id="imgInput" required>
             <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">И прикрепите иллюстрацию</span>
           </label>
           <button class="profile__attachments-btn btn--inactive" type="submit">Отправить</button>
@@ -98,12 +100,16 @@
         <form class="profile__attachments-form" action="#">
           <div class="profile__attachments-title"><span class="profile__attachments-text title">проект: digital 3.0</span></div>
           <div class="profile__attachments-picture"></div>
-          <label class="profile__attachments-label">
-            <input class="profile__attachments-attach" type="file" name="pic" accept="image/*" onchange="changeDocx()">
+          <div class="profile__attachments__files">
+            <div class="participant-info__files-docx hidden" id="docxPresentation">.DOCX</div>
+            <div class="participant-info__files-docx hidden" id="pptx">.PPTX</div>
+          </div>
+          <label class="profile__attachments-label" id="labelDesc">
+            <input class="profile__attachments-attach" type="file" name="pic" accept=".doc, .docx" onchange="changeDesc()" required>
             <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">Приложите фаил с подробным описанием (.DOCX, объем не ограничен!)</span>
           </label>
-          <label class="profile__attachments-label">
-            <input class="profile__attachments-attach" type="file" name="pic" accept="image/*">
+          <label class="profile__attachments-label" id="labelPresentation">
+            <input class="profile__attachments-attach" type="file" name="pic" accept=".pptx, .pdf" onchange="changePresentation()" required>
             <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">Прикрепите презентацию, с которой будете выступать в финале (.PPTX или .PDF)</span>
           </label>
           <button class="profile__attachments-btn btn--inactive" type="submit">Отправить</button>
