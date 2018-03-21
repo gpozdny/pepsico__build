@@ -77,13 +77,17 @@
       <div class="profile__attachments">
         <form class="profile__attachments-form" action="#">
           <div class="profile__attachments-title"><span class="profile__attachments-text title">назовите свой проект</span></div>
-          <input class="profile__attachments-input" type="text" placeholder="Введите название проекта">
-          <label class="profile__attachments-label">
-            <input class="profile__attachments-attach" type="file" name="pic" accept="image/*">
+          <input class="profile__attachments-input" type="text" placeholder="Введите название проекта" required>
+          <div class="profile__attachments__files">
+            <div class="participant-info__files-docx hidden" id="docx">.DOCX</div>
+            <div class="participant-info__files-presentation hidden" id="image">Image</div>
+          </div>
+          <label class="profile__attachments-label" id="labelDocx">
+            <input class="profile__attachments-attach" type="file" name="pic" onchange="changeDocx()" required>
             <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">Приложите файл с описанием (.DOCX, максимум - 1 страница!)</span>
           </label>
-          <label class="profile__attachments-label">
-            <input class="profile__attachments-attach" type="file" name="pic" accept="image/*">
+          <label class="profile__attachments-label" id="labelImage">
+            <input class="profile__attachments-attach" type="file" name="pic" accept="image/*" onchange="changeImage()" required>
             <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">И прикрепите иллюстрацию</span>
           </label>
           <button class="profile__attachments-btn btn--inactive" type="submit">Отправить</button>
@@ -96,7 +100,7 @@
           <div class="profile__attachments-title"><span class="profile__attachments-text title">проект: digital 3.0</span></div>
           <div class="profile__attachments-picture"></div>
           <label class="profile__attachments-label">
-            <input class="profile__attachments-attach" type="file" name="pic" accept="image/*">
+            <input class="profile__attachments-attach" type="file" name="pic" accept="image/*" onchange="changeDocx()">
             <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">Приложите фаил с подробным описанием (.DOCX, объем не ограничен!)</span>
           </label>
           <label class="profile__attachments-label">
