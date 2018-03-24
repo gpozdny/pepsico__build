@@ -14,17 +14,11 @@
     <div class="wrapper wrapper--auth-bg">
       <section class="form">
         <form class="form__auth" action="#" id="auth" method="post">
+          <div class="form__error removed"><span class="form__error-icon">!</span><span class="form__error-text">Неверный логин или пароль</span></div>
           <p class="form__desc">Для авторизации в системе введите логин и пароль</p>
           <div class="form__inputs-wrap">
             <input class="form__login" placeholder="Ваш логин/e-mail" type="text" required>
             <input class="form__password" placeholder="Пароль" type="password" required>
-          </div>
-          <p class="form__appointment-desc">Ваше направление:</p>
-          <div class="form__appointment-wrap">
-            <input class="form__appointment-input" type="radio" name="appointment" value="Маркетинг" id="marketing">
-            <label class="form__appointment-label" for="marketing">Маркетинг</label>
-            <input class="form__appointment-input" type="radio" name="appointment" value="sales" id="sales">
-            <label class="form__appointment-label" for="sales">Продажи</label>
           </div>
           <button class="form__auth-btn btn--inactive" type="submit" form="auth">Войти в систему</button>
         </form>

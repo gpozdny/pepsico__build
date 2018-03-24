@@ -77,68 +77,69 @@
         </div>
       </main>
     </div>
-    <div class="profile__modals">
-      <div class="profile__error removed"><span class="profile__error-icon">!</span><span class="profile__error-text">Ошибка при заполнении формы. Попробуйте еще раз.</span></div>
-      <div class="profile__attachments">
-        <div class="profile__guide"><a class="profile__guide-link" href="#" download>Ознакомьтесь с заданием</a><span class="profile__guide-icon"> </span></div>
-        <form class="profile__attachments-form" action="#">
-          <div class="profile__attachments-title"><span class="profile__attachments-text title">назовите свой проект</span></div>
-          <input class="profile__attachments-input" type="text" placeholder="Введите название проекта" required>
-          <div class="profile__attachments__files">
-            <div class="participant-info__files-docx hidden" id="docx">.DOCX</div><img class="participant-info__files-img hidden" src="" alt="Image" id="image">
+    <div class="profile__modals-overlay" id="modal">
+      <div class="profile__modals" id="briefModal" data-modal="brief">
+        <div class="form__error removed"><span class="form__error-icon">!</span><span class="form__error-text">Ошибка при заполнении формы. Попробуйте еще раз.</span></div>
+        <div class="profile__attachments">
+          <div class="profile__guide"><a class="profile__guide-link" href="#" download>Ознакомьтесь с заданием</a><span class="profile__guide-icon"> </span></div>
+          <form class="profile__attachments-form" action="#">
+            <div class="profile__attachments-title"><span class="profile__attachments-text title">назовите свой проект</span></div>
+            <input class="profile__attachments-input" type="text" placeholder="Введите название проекта" required>
+            <div class="profile__attachments__files">
+              <div class="participant-info__files-docx hidden" id="docx">.DOCX</div><img class="participant-info__files-img hidden" src="" alt="Image" id="image">
+            </div>
+            <label class="profile__attachments-label" id="labelDocx">
+              <input class="profile__attachments-attach" type="file" name="pic" onchange="changeDocx()" required accept=".doc, .docx">
+              <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">Приложите файл с описанием (.DOCX, максимум - 1 страница!)</span>
+            </label>
+            <label class="profile__attachments-label" id="labelImage">
+              <input class="profile__attachments-attach" type="file" name="pic" accept="image/*" onchange="changeImage(); previewFile();" id="imgInput" required>
+              <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">И прикрепите иллюстрацию</span>
+            </label>
+            <button class="profile__attachments-btn btn--inactive" type="submit">Отправить</button>
+          </form><span class="profile__modal-cross">x </span>
+        </div>
+      </div>
+      <div class="profile__modals-presentation" id="presentationModal" data-modal="presentation">
+        <div class="profile__error removed"><span class="profile__error-icon">!</span><span class="profile__error-text">Ошибка при заполнении формы. Попробуйте еще раз.         </span></div>
+        <div class="profile__attachments-presentation">
+          <div class="profile__guide"><a class="profile__guide-link" href="#" download>Ознакомьтесь с заданием</a><span class="profile__guide-icon"></span></div>
+          <form class="profile__attachments-form" action="#">
+            <div class="profile__attachments-title"><span class="profile__attachments-text title">проект: digital 3.0</span></div>
+            <div class="profile__attachments-picture"></div>
+            <div class="profile__attachments__files">
+              <div class="participant-info__files-docx hidden" id="docxPresentation">.DOCX</div>
+              <div class="participant-info__files-docx hidden" id="pptx">.PPTX</div>
+            </div>
+            <label class="profile__attachments-label" id="labelDesc">
+              <input class="profile__attachments-attach" type="file" name="pic" accept=".doc, .docx" onchange="changeDesc()" required>
+              <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">Приложите фаил с подробным описанием (.DOCX, объем не ограничен!)</span>
+            </label>
+            <label class="profile__attachments-label" id="labelPresentation">
+              <input class="profile__attachments-attach" type="file" name="pic" accept=".pptx, .pdf" onchange="changePresentation()" required>
+              <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">Прикрепите презентацию, с которой будете выступать в финале (.PPTX или .PDF)</span>
+            </label>
+            <button class="profile__attachments-btn btn--inactive" type="submit">Отправить</button>
+          </form><span class="profile__modal-cross">x</span>
+        </div>
+      </div>
+      <div class="profile__modals-fail" id="failfModal" data-modal="fail">
+        <div class="profile__fail">
+          <div class="profile__fail-title"><span class="title title--red">вы не справились</span></div>
+          <div class="profile__fail-wrap">
+            <p class="profile__fail-red">Вы набрали недостаточно баллов для прохождения в финал по направлению</p><span class="profile__fail-tag">Маркетинг</span>
           </div>
-          <label class="profile__attachments-label" id="labelDocx">
-            <input class="profile__attachments-attach" type="file" name="pic" onchange="changeDocx()" required accept=".doc, .docx">
-            <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">Приложите файл с описанием (.DOCX, максимум - 1 страница!)</span>
-          </label>
-          <label class="profile__attachments-label" id="labelImage">
-            <input class="profile__attachments-attach" type="file" name="pic" accept="image/*" onchange="changeImage(); previewFile();" id="imgInput" required>
-            <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">И прикрепите иллюстрацию</span>
-          </label>
-          <button class="profile__attachments-btn btn--inactive" type="submit">Отправить</button>
-        </form><span class="profile__modal-cross">x </span>
+          <ul class="profile__fail-list">
+            <li class="profile__fail-item"><span class="profile__fail-reason">недостаточно креативности</span></li>
+            <li class="profile__fail-item"><span class="profile__fail-reason">низкая харизма</span></li>
+          </ul>
+          <div class="profile__fail-wrap">
+            <p class="profile__fail-text">Вы ещё можете попробоватьсебя во втором выбранном вами направлении -</p><span class="profile__fail-tag profile__fail-tag--secondary">продажи</span>
+          </div>
+          <div class="profile__fail-buttons"><span class="profile__fail-text">Продолжим?</span><a class="profile__fail-btn btn--inactive btn--active" href="#">Да, продолжить!     </a><a class="profile__fail-btn btn--inactive btn--white" href="#">Нет, спасибо!</a></div><span class="profile__modal-cross">x             </span>
+        </div>
       </div>
     </div>
-    <div class="profile__modals-presentation">
-      <div class="profile__error removed"><span class="profile__error-icon">!</span><span class="profile__error-text">Ошибка при заполнении формы. Попробуйте еще раз.         </span></div>
-      <div class="profile__attachments-presentation">
-        <div class="profile__guide"><a class="profile__guide-link" href="#" download>Ознакомьтесь с заданием</a><span class="profile__guide-icon"></span></div>
-        <form class="profile__attachments-form" action="#">
-          <div class="profile__attachments-title"><span class="profile__attachments-text title">проект: digital 3.0</span></div>
-          <div class="profile__attachments-picture"></div>
-          <div class="profile__attachments__files">
-            <div class="participant-info__files-docx hidden" id="docxPresentation">.DOCX</div>
-            <div class="participant-info__files-docx hidden" id="pptx">.PPTX</div>
-          </div>
-          <label class="profile__attachments-label" id="labelDesc">
-            <input class="profile__attachments-attach" type="file" name="pic" accept=".doc, .docx" onchange="changeDesc()" required>
-            <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">Приложите фаил с подробным описанием (.DOCX, объем не ограничен!)</span>
-          </label>
-          <label class="profile__attachments-label" id="labelPresentation">
-            <input class="profile__attachments-attach" type="file" name="pic" accept=".pptx, .pdf" onchange="changePresentation()" required>
-            <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">Прикрепите презентацию, с которой будете выступать в финале (.PPTX или .PDF)</span>
-          </label>
-          <button class="profile__attachments-btn btn--inactive" type="submit">Отправить</button>
-        </form><span class="profile__modal-cross">x</span>
-      </div>
-    </div>
-    <div class="profile__modals-fail">
-      <div class="profile__fail">
-        <div class="profile__fail-title"><span class="title title--red">вы не справились</span></div>
-        <div class="profile__fail-wrap">
-          <p class="profile__fail-red">Вы набрали недостаточно баллов для прохождения в финал по направлению</p><span class="profile__fail-tag">Маркетинг</span>
-        </div>
-        <ul class="profile__fail-list">
-          <li class="profile__fail-item"><span class="profile__fail-reason">недостаточно креативности</span></li>
-          <li class="profile__fail-item"><span class="profile__fail-reason">низкая харизма</span></li>
-        </ul>
-        <div class="profile__fail-wrap">
-          <p class="profile__fail-text">Вы ещё можете попробоватьсебя во втором выбранном вами направлении -</p><span class="profile__fail-tag profile__fail-tag--secondary">продажи</span>
-        </div>
-        <div class="profile__fail-buttons"><span class="profile__fail-text">Продолжим?</span><a class="profile__fail-btn btn--inactive btn--active" href="#">Да, продолжить!     </a><a class="profile__fail-btn btn--inactive btn--white" href="#">Нет, спасибо!</a></div>
-      </div><span class="profile__modal-cross">x             </span>
-    </div>
-    <div class="profile__modals-overlay">                </div>
     <script src="assets/js/plugins.js" defer></script>
     <script src="assets/js/app.js" defer></script>
   </body>
