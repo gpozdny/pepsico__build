@@ -141,7 +141,27 @@
             <li class="participant">
               <div class="participant__left"><span class="participant__icon">ПР</span></div>
               <div class="participant__middle"><span class="participant__name">Ардынцев Валентин</span><span class="participant__tag">Бриф </span></div>
-              <div class="participant__right"><span class="participant__time">Осталось 4 дня                                                                                                </span></div>
+              <div class="participant__right"><span class="participant__time">Осталось 4 дня</span></div>
+            </li>
+            <li class="participant">
+              <div class="participant__left"><span class="participant__icon">ПР</span></div>
+              <div class="participant__middle"><span class="participant__name">Ардынцев Валентин</span><span class="participant__tag">Бриф </span></div>
+              <div class="participant__right"><span class="participant__time">Осталось 4 дня</span></div>
+            </li>
+            <li class="participant">
+              <div class="participant__left"><span class="participant__icon">ПР</span></div>
+              <div class="participant__middle"><span class="participant__name">Ардынцев Валентин</span><span class="participant__tag">Бриф </span></div>
+              <div class="participant__right"><span class="participant__time">Осталось 4 дня</span></div>
+            </li>
+            <li class="participant">
+              <div class="participant__left"><span class="participant__icon">ПР</span></div>
+              <div class="participant__middle"><span class="participant__name">Ардынцев Валентин</span><span class="participant__tag">Бриф </span></div>
+              <div class="participant__right"><span class="participant__time">Осталось 4 дня</span></div>
+            </li>
+            <li class="participant">
+              <div class="participant__left"><span class="participant__icon">ПР</span></div>
+              <div class="participant__middle"><span class="participant__name">Ардынцев Валентин</span><span class="participant__tag">Бриф </span></div>
+              <div class="participant__right"><span class="participant__time">Осталось 4 дня                                                                                                          </span></div>
             </li>
           </ul>
         </section>
@@ -158,6 +178,10 @@
             <div class="participant-info__right">
               <div class="participant-info__project title"><span class="participant-info__project-title">Презентация</span><span class="participant-info__project-name">Проект DIGITAL 3.0</span></div><span class="participant-info__files-text">Документы проекта:    </span>
               <div class="participant-info__files"><a class="participant-info__files-image" href="#" download></a><a class="participant-info__files-presentation" href="#" download>.PPTX</a><a class="participant-info__files-docx" href="#" download>.DOCX</a></div>
+            </div>
+            <div class="participant-info__right participant-info__right--project">
+              <div class="participant-info__project title"><span class="participant-info__project-title">Презентация</span><span class="participant-info__project-name">Проект DIGITAL 3.0</span></div><span class="participant-info__files-text">Документы проекта:    </span>
+              <div class="participant-info__files"><a class="participant-info__files-presentation participant-info__files-presentation--project" href="#" download>.PPTX</a><a class="participant-info__files-docx" href="#" download>.DOCX      </a></div>
             </div>
           </div>
           <div class="participant__assessment">
@@ -201,8 +225,8 @@
           <div class="participant__assessment-comment">
             <div class="participant__assessment-title title"><span class="participant__assessment-text">Комментарий</span></div>
             <form class="participant__assessment-form" action="#" id="comment" method="get">
-              <input class="participant__assessment-input" type="text" placeholder="Оставьте ваш комментарий о работе">
-              <button class="btn--inactive">Отправить оценку</button>
+              <input class="participant__assessment-input" type="text" placeholder="Оставьте ваш комментарий о работе" oninput="checkLength()">
+              <button class="btn--inactive" id="btnMentor">Отправить оценку</button>
             </form>
           </div>
         </section>
