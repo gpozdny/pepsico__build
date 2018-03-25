@@ -168,12 +168,15 @@
         <section class="content__right">
           <div class="participant-info">
             <div class="participant-info__left">
-              <div class="participant-info__picture"><img src="assets/img/pics/participants/participant.jpg" alt="Фото участника"></div>
-              <div class="participant-info__desc">
-                <div class="participant-info__credentials"><span class="participant-info__name">Плейсхолдер</span><span class="participant-info__surname">Плейсхолдрович</span></div>
-                <div class="participant-info__city"><span class="participant-info__city-label">город:</span><span class="participant-info__city-name">Волгоград</span></div>
-                <div class="participant-info__education"><span class="participant-info__education-label">образования:</span><span class="participant-info__education-name">ВолгГАСУ</span></div><span class="participant-info__deadline">Осталось 4 дня на обработку     </span>
-              </div>
+              <div class="participant-info__left-wrap">
+                <div class="participant-info__picture"><img src="assets/img/pics/participants/participant.jpg" alt="Фото участника"></div>
+                <div class="participant-info__desc">
+                  <div class="participant-info__credentials"><span class="participant-info__name">Плейсхолдер</span><span class="participant-info__surname">Плейсхолдрович</span></div>
+                  <div class="participant-info__city"><span class="participant-info__city-label">город:</span><span class="participant-info__city-name">Волгоград</span></div>
+                  <div class="participant-info__education"><span class="participant-info__education-label">образование:</span><span class="participant-info__education-name">ВолгГАСУ</span></div>
+                  <div class="participant-info__education participant-info__education--course"><span class="participant-info__education-label">курс:</span><span class="participant-info__education-name">3 </span></div>
+                </div>
+              </div><span class="participant-info__deadline">Осталось 4 дня на обработку     </span>
             </div>
             <div class="participant-info__right">
               <div class="participant-info__project title"><span class="participant-info__project-title">Презентация</span><span class="participant-info__project-name">Проект DIGITAL 3.0</span></div><span class="participant-info__files-text">Документы проекта:    </span>
@@ -197,36 +200,51 @@
                 <div class="participant__assessment-circle"></div><span class="participant__assessment-info">8-10 - Выше среднего</span>
               </li>
             </ul>
-            <div class="participant__rate">
+            <form class="participant__rate" action="#" method="get">
               <ul class="participant__rate-list">
                 <li class="participant__rate-item"><span class="participant__rate-title">Ориентированность на будущее</span>
                   <div class="participant__rate-circle">
-                    <input class="dial" type="text" value="8" data-width="150" data-fgColor="#009639" data-thickness=".1">
+                    <input class="dial" type="text" value="8" data-width="150" data-fgColor="#009639" data-thickness=".1" data-low="4" data-high="8">
                   </div>
                 </li>
                 <li class="participant__rate-item"><span class="participant__rate-title">Креативность</span>
                   <div class="participant__rate-circle">
-                    <input class="dial" type="text" value="4" data-width="150" data-thickness=".1" data-fgColor="#F5913B">
+                    <input class="dial" type="text" value="4" data-width="150" data-thickness=".1" data-fgColor="#F5913B" data-low="4" data-high="8">
                   </div>
                 </li>
                 <li class="participant__rate-item"><span class="participant__rate-title">Продающая история</span>
                   <div class="participant__rate-circle">
-                    <input class="dial" type="text" value="1" data-width="150" data-thickness=".1" data-fgColor="#E72E36">
+                    <input class="dial" type="text" value="1" data-width="150" data-thickness=".1" data-fgColor="#E72E36" data-low="4" data-high="8">
                   </div>
                 </li>
                 <li class="participant__rate-item"><span class="participant__rate-title">Уровень анализа</span>
                   <div class="participant__rate-circle">
-                    <input class="dial" type="text" value="9" data-width="150" data-thickness=".1" data-fgColor="#009639">
+                    <input class="dial" type="text" value="9" data-width="150" data-thickness=".1" data-fgColor="#009639" data-low="4" data-high="8">
                   </div>
                 </li>
               </ul>
-            </div>
+              <button class="btn--inactive btn--active" id="btnAssestment">Отправить оценку                                        </button>
+            </form>
           </div>
           <div class="participant__assessment-comment">
-            <div class="participant__assessment-title title"><span class="participant__assessment-text">Комментарий</span></div>
+            <div class="participant__assessment-title title"><span class="participant__assessment-text">Комментарии</span></div>
+            <div class="participant__assessment-list">
+              <li class="participant__assessment-block">
+                <div class="participant__assessment-top"><span class="participant__assessment-name">Владимир Пономарёв</span><span class="participant__assessment-date">24.03.2018</span></div>
+                <div class="participant__assessment-wrap">
+                  <p class="participant__assessment-text">В соответствии с «Положением о единицах величин, допускаемых к применению в Российской Федерации», текст допущен к использованию в качестве внесистемной единицы линейной плотности без ограничения срока действия допуска с областью применения «текстильная промышленность». Тем же Положением не допускается применение наименований и обозначений единиц линейной плотности с дольными и кратными</p>
+                </div>
+              </li>
+              <li class="participant__assessment-block">
+                <div class="participant__assessment-top"><span class="participant__assessment-name">Владимир Пономарёв</span><span class="participant__assessment-date">24.03.2018</span></div>
+                <div class="participant__assessment-wrap">
+                  <p class="participant__assessment-text">В соответствии с «Положением о единицах величин, допускаемых к применению в Российской Федерации», текст допущен к использованию в качестве внесистемной единицы линейной плотности без ограничения срока действия допуска с областью применения «текстильная промышленность». Тем же Положением не допускается применение наименований и обозначений единиц линейной плотности с дольными и кратными</p>
+                </div>
+              </li>
+            </div><span class="participant__assessment-comment--title">Ваш комментарий</span>
             <form class="participant__assessment-form" action="#" id="comment" method="get">
               <input class="participant__assessment-input" type="text" placeholder="Оставьте ваш комментарий о работе" oninput="checkLength()">
-              <button class="btn--inactive" id="btnMentor">Отправить оценку</button>
+              <button class="btn--inactive" id="btnMentor">Отправить комментарий</button>
             </form>
           </div>
         </section>
