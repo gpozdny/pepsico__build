@@ -12,17 +12,20 @@
   </head>
   <body>
     <div class="wrapper wrapper--auth-bg">
+      <section class="title-logo"><a class="logo" href="#"><img class="logo-pic" src="assets/img/pics/logo-go.png" alt="logo"></a>
+        <div class="title-logo__wrap"> <img src="assets/img/pics/title-pic.png" alt="title"></div>
+      </section>
       <section class="form">
         <form class="form__auth" action="#" id="auth" method="post">
           <div class="form__error removed"><span class="form__error-icon">!</span><span class="form__error-text">Неверный логин или пароль</span></div>
           <p class="form__desc">Для авторизации в системе введите логин и пароль</p>
           <div class="form__inputs-wrap">
             <input class="form__login" placeholder="Ваш логин/e-mail" type="text" required>
-            <input class="form__password" placeholder="Пароль" type="password" required>
+            <input class="form__password" placeholder="Пароль" type="password" required oninput="checkForm()">
           </div>
           <button class="form__auth-btn btn--inactive" type="submit" form="auth">Войти в систему</button>
+          <div class="form__password-reset"><span class="form__password-desc">Забыли пароль?</span><span class="form__password-desc">Восстановите его по <a class='form__reset-link' href='#'>ссылке</a></span></div>
         </form>
-        <div class="form__password-reset"><span class="form__password-desc">Забыли пароль?</span><span class="form__password-desc">Восстановите его по <a class='form__reset-link' href='#'>ссылке</a></span></div>
       </section>
     </div>
     <script src="assets/js/plugins.js" defer></script>
