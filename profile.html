@@ -84,19 +84,19 @@
           <div class="profile__guide"><a class="profile__guide-link" href="#" download>Ознакомьтесь с заданием</a><span class="profile__guide-icon"> </span></div>
           <form class="profile__attachments-form" action="#">
             <div class="profile__attachments-title"><span class="profile__attachments-text title">назовите свой проект</span></div>
-            <input class="profile__attachments-input" type="text" placeholder="Введите название проекта" required>
+            <input class="profile__attachments-input" type="text" placeholder="Введите название проекта" required id="projectName" oninput="validateProject()">
             <div class="profile__attachments__files">
               <div class="participant-info__files-docx hidden" id="docx">.DOCX</div><img class="participant-info__files-img hidden" src="" alt="Image" id="image">
             </div>
             <label class="profile__attachments-label" id="labelDocx">
-              <input class="profile__attachments-attach" type="file" name="pic" onchange="changeDocx()" required accept=".doc, .docx">
+              <input class="profile__attachments-attach" type="file" name="pic" onchange="changeDocx(); validateProject();" required accept=".doc, .docx" id="docxInput">
               <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">Приложите файл с описанием (.DOCX, максимум - 1 страница!)</span>
             </label>
             <label class="profile__attachments-label" id="labelImage">
-              <input class="profile__attachments-attach" type="file" name="pic" accept="image/*" onchange="changeImage(); previewFile();" id="imgInput" required>
+              <input class="profile__attachments-attach" type="file" name="pic" accept="image/*" onchange="changeImage(); previewFile(); validateProject();" id="imgInput" required>
               <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">И прикрепите иллюстрацию</span>
             </label>
-            <button class="profile__attachments-btn btn--inactive" type="submit">Отправить</button>
+            <button class="profile__attachments-btn btn--inactive" type="submit" id="submitProject">Отправить</button>
           </form><span class="profile__modal-cross">x </span>
         </div>
       </div>
@@ -112,14 +112,14 @@
               <div class="participant-info__files-docx hidden" id="pptx">.PPTX</div>
             </div>
             <label class="profile__attachments-label" id="labelDesc">
-              <input class="profile__attachments-attach" type="file" name="pic" accept=".doc, .docx" onchange="changeDesc()" required>
+              <input class="profile__attachments-attach" type="file" name="pic" accept=".doc, .docx" onchange="changeDesc(); validatePresent();" required id="descInput">
               <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">Приложите фаил с подробным описанием (.DOCX, объем не ограничен!)</span>
             </label>
             <label class="profile__attachments-label" id="labelPresentation">
-              <input class="profile__attachments-attach" type="file" name="pic" accept=".pptx, .pdf" onchange="changePresentation()" required>
+              <input class="profile__attachments-attach" type="file" name="pic" accept=".pptx, .pdf" onchange="changePresentation(); validatePresent();" required id="presentInput">
               <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">Прикрепите презентацию, с которой будете выступать в финале (.PPTX или .PDF)</span>
             </label>
-            <button class="profile__attachments-btn btn--inactive" type="submit">Отправить</button>
+            <button class="profile__attachments-btn btn--inactive" type="submit" id="submitPresent">Отправить</button>
           </form><span class="profile__modal-cross">x</span>
         </div>
       </div>
