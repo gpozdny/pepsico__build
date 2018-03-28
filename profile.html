@@ -49,7 +49,7 @@
               </div>
               <div class="profile__item-desc"><span class="profile__item-info">Прикрепите название проекта и слайды для выступления в финале!    </span></div>
             </li>
-            <li class="profile__item profile__item--active" id="presentation" data-item="step">
+            <li class="profile__item profile__item--deadline" id="presentation" data-item="step">
               <div class="profile__title-wrap">
                 <h2 class="profile__item-title">3. Презентация</h2>
               </div>
@@ -61,7 +61,7 @@
               </div>
               <div class="profile__item-desc"><span class="profile__item-info">Прикрепите название проекта и слайды для выступления в финале!</span></div>
             </li>
-            <li class="profile__item profile__item--failed" id="finals" data-item="step">
+            <li class="profile__item profile__item--fail" id="finals" data-item="step">
               <div class="profile__title-wrap">
                 <h2 class="profile__item-title">4. Финалы</h2>
               </div>
@@ -136,7 +136,15 @@
           <div class="profile__fail-wrap">
             <p class="profile__fail-text">Вы ещё можете попробоватьсебя во втором выбранном вами направлении -</p><span class="profile__fail-tag profile__fail-tag--secondary">продажи</span>
           </div>
-          <div class="profile__fail-buttons"><span class="profile__fail-text">Продолжим?</span><a class="profile__fail-btn btn btn--active" href="#">Да, продолжить!     </a><a class="profile__fail-btn btn btn--white" href="#">Нет, спасибо!</a></div><span class="profile__modal-cross">x             </span>
+          <div class="profile__fail-buttons"><span class="profile__fail-text">Продолжим?</span><a class="profile__fail-btn btn btn--active" href="#">Да, продолжить!     </a><a class="profile__fail-btn btn btn--white" href="#">Нет, спасибо!</a></div><span class="profile__modal-cross">x</span>
+        </div>
+      </div>
+      <div class="profile__modals-deadline" id="deadlineModal" data-modal="deadline">
+        <div class="profile__fail">
+          <div class="profile__fail-title"><span class="title title--red">deadline</span></div>
+          <div class="profile__fail-wrap">
+            <p class="profile__fail-red">Вы не успели отправить свой проект на оценку в отведенное время</p>
+          </div><span class="profile__modal-cross">x                     </span>
         </div>
       </div>
     </div>
