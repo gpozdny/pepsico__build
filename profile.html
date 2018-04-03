@@ -26,30 +26,31 @@
             </div>
           </div>
           <ul class="profile__list">
-            <li class="profile__item profile__item--success" data-item="step"> 
+            <li class="profile__item profile__item--success profile__item--description" data-item="step" id="interview" data-modal="success">
               <div class="profile__title-wrap">
                 <h2 class="profile__item-title">1. Видеоинтервью</h2>
               </div>
               <div class="profile__item-wrap">
-                <div class="profile__item-icon"></div>
+                <div class="profile__item-icon" id="interviewIcon"></div>
               </div>
               <div class="profile__item-status">
                 <button class="btn profile__btn">Успешно!</button>
               </div>
+              <div class="profile__item-desc"><span class="profile__item-info">Ваша идея была высоко оценена менторами!   </span></div>
             </li>
-            <li class="profile__item profile__item--active" id="briefing" data-item="step">
+            <li class="profile__item profile__item--active profile__item--description" id="briefing" data-item="step" data-modal="add-brief">
               <div class="profile__title-wrap">
                 <h2 class="profile__item-title">2. Бриф    </h2>
               </div>
               <div class="profile__item-wrap">
-                <div class="profile__item-icon profile__item-icon--idea" id="briefingIcon" data-item="step"></div>
+                <div class="profile__item-icon profile__item-icon--idea" id="briefingIcon"></div>
               </div>
               <div class="profile__item-status">
                 <button class="btn profile__btn">На оценке!</button>
               </div>
-              <div class="profile__item-desc"><span class="profile__item-info">Прикрепите название проекта и слайды для выступления в финале!    </span></div>
+              <div class="profile__item-desc"><span class="profile__item-info">Отправьте краткое описание своей идеи с фокусом на выбранное направление стажировки   </span></div>
             </li>
-            <li class="profile__item profile__item--deadline" id="presentation" data-item="step">
+            <li class="profile__item profile__item--active profile__item--description" id="presentation" data-item="step" data-modal="add-presentation">
               <div class="profile__title-wrap">
                 <h2 class="profile__item-title">3. Презентация</h2>
               </div>
@@ -59,9 +60,9 @@
               <div class="profile__item-status">
                 <button class="btn profile__btn">До 13 апреля</button>
               </div>
-              <div class="profile__item-desc"><span class="profile__item-info">Прикрепите название проекта и слайды для выступления в финале!</span></div>
+              <div class="profile__item-desc"><span class="profile__item-info">Спасибо за вашу идею! К сожалению, в рамках конкурсного отбора, она оказалась слабее</span></div>
             </li>
-            <li class="profile__item profile__item--fail" id="finals" data-item="step">
+            <li class="profile__item profile__item--fail profile__item--description" id="finals" data-item="step" data-modal="fail">
               <div class="profile__title-wrap">
                 <h2 class="profile__item-title">4. Финалы</h2>
               </div>
@@ -69,7 +70,7 @@
                 <div class="profile__item-icon profile__item-icon--finals" id="finalsIcon"></div>
               </div>
               <div class="profile__item-status">
-                <button class="btn profile__btn">До 1 мая</button>
+                <button class="btn profile__btn">четвертый этап lel</button>
               </div>
               <div class="profile__item-desc"><span class="profile__item-info">Прикрепите название проекта и слайды для выступления в финале!                                     </span></div>
             </li>
@@ -78,7 +79,7 @@
       </main>
     </div>
     <div class="profile__modals-overlay" id="modal">
-      <div class="profile__modals" id="briefModal" data-modal="brief">
+      <div class="profile__modals" id="briefModal" data-popup="brief">
         <div class="form__error removed"><span class="form__error-icon">!</span><span class="form__error-text">Ошибка при заполнении формы. Попробуйте еще раз.</span></div>
         <div class="profile__attachments">
           <div class="profile__guide"><a class="profile__guide-link" href="#" download>Ознакомьтесь с заданием</a><span class="profile__guide-icon"> </span></div>
@@ -100,7 +101,7 @@
           </form><span class="profile__modal-cross">x </span>
         </div>
       </div>
-      <div class="profile__modals-presentation" id="presentationModal" data-modal="presentation">
+      <div class="profile__modals-presentation" id="presentationModal" data-popup="presentation">
         <div class="form__error removed"><span class="form__error-icon">!</span><span class="form__error-text">Ошибка при заполнении формы. Попробуйте еще раз.         </span></div>
         <div class="profile__attachments-presentation">
           <div class="profile__guide"><a class="profile__guide-link" href="#" download>Ознакомьтесь с заданием</a><span class="profile__guide-icon"></span></div>
@@ -123,7 +124,7 @@
           </form><span class="profile__modal-cross">x</span>
         </div>
       </div>
-      <div class="profile__modals-fail" id="failfModal" data-modal="fail">
+      <div class="profile__modals-fail" id="failfModal" data-popup="fail">
         <div class="profile__fail">
           <div class="profile__fail-title"><span class="title title--red">вы не справились</span></div>
           <div class="profile__fail-wrap">
@@ -136,15 +137,23 @@
           <div class="profile__fail-wrap">
             <p class="profile__fail-text">Вы ещё можете попробоватьсебя во втором выбранном вами направлении -</p><span class="profile__fail-tag profile__fail-tag--secondary">продажи</span>
           </div>
-          <div class="profile__fail-buttons"><span class="profile__fail-text">Продолжим?</span><a class="profile__fail-btn btn btn--active" href="#">Да, продолжить!     </a><a class="profile__fail-btn btn btn--white" href="#">Нет, спасибо!</a></div><span class="profile__modal-cross">x</span>
+          <div class="profile__fail-buttons"><span class="profile__fail-text">Продолжим?</span><a class="profile__fail-btn btn btn--active" href="#">Да, продолжить!     </a><a class="profile__fail-btn btn btn--white" href="#" id="btn-no">Нет, спасибо!</a></div><span class="profile__modal-cross">x</span>
         </div>
       </div>
-      <div class="profile__modals-deadline" id="deadlineModal" data-modal="deadline">
+      <div class="profile__modals-deadline" id="deadlineModal" data-popup="deadline">
         <div class="profile__fail">
           <div class="profile__fail-title"><span class="title title--red">deadline</span></div>
           <div class="profile__fail-wrap">
             <p class="profile__fail-red">Вы не успели отправить свой проект на оценку в отведенное время</p>
-          </div><span class="profile__modal-cross">x                     </span>
+          </div><span class="profile__modal-cross">x</span>
+        </div>
+      </div>
+      <div class="profile__modals-placeholder" id="placeholder" data-popup="placeholder">
+        <div class="profile__fail">
+          <div class="profile__fail-title"><span class="title title--red">placeholder</span></div>
+          <div class="profile__fail-wrap">
+            <p class="profile__fail-red">there's no design for this modal</p>
+          </div><span class="profile__modal-cross">x                             </span>
         </div>
       </div>
     </div>
