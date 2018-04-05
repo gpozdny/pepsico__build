@@ -62,7 +62,7 @@
               </div>
               <div class="profile__item-desc"><span class="profile__item-info">Спасибо за вашу идею! К сожалению, в рамках конкурсного отбора, она оказалась слабее</span></div>
             </li>
-            <li class="profile__item profile__item--fail profile__item--description" id="finals" data-item="step" data-modal="fail">
+            <li class="profile__item profile__item--fail profile__item--description" id="finals" data-item="step" data-modal="final">
               <div class="profile__title-wrap">
                 <h2 class="profile__item-title">4. Финалы</h2>
               </div>
@@ -91,11 +91,11 @@
             </div>
             <label class="profile__attachments-label" id="labelDocx">
               <input class="profile__attachments-attach" type="file" name="pic" onchange="changeDocx(); validateProject();" required accept=".doc, .docx" id="docxInput">
-              <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">Приложите файл с описанием (.DOCX, максимум - 1 страница!)</span>
+              <div class="profile__attachments-icon"></div><span class="profile__attachments-desc profile__modals-text">Приложите файл с описанием (.DOCX, максимум - 1 страница!)</span>
             </label>
             <label class="profile__attachments-label" id="labelImage">
               <input class="profile__attachments-attach" type="file" name="pic" accept="image/*" onchange="changeImage(); previewFile(); validateProject();" id="imgInput" required>
-              <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">И прикрепите иллюстрацию</span>
+              <div class="profile__attachments-icon"></div><span class="profile__attachments-desc profile__modals-text">И прикрепите иллюстрацию</span>
             </label>
             <button class="profile__attachments-btn btn btn--inactive" type="submit" id="submitProject">Отправить</button>
           </form><span class="profile__modal-cross">x </span>
@@ -114,11 +114,11 @@
             </div>
             <label class="profile__attachments-label" id="labelDesc">
               <input class="profile__attachments-attach" type="file" name="pic" accept=".doc, .docx" onchange="changeDesc(); validatePresent();" required id="descInput">
-              <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">Приложите фаил с подробным описанием (.DOCX, объем не ограничен!)</span>
+              <div class="profile__attachments-icon"></div><span class="profile__attachments-desc profile__modals-text">Приложите фаил с подробным описанием (.DOCX, объем не ограничен!)</span>
             </label>
             <label class="profile__attachments-label" id="labelPresentation">
               <input class="profile__attachments-attach" type="file" name="pic" accept=".pptx, .pdf" onchange="changePresentation(); validatePresent();" required id="presentInput">
-              <div class="profile__attachments-icon"></div><span class="profile__attachments-desc">Прикрепите презентацию, с которой будете выступать в финале (.PPTX или .PDF)</span>
+              <div class="profile__attachments-icon"></div><span class="profile__attachments-desc profile__modals-text">Прикрепите презентацию, с которой будете выступать в финале (.PPTX или .PDF)</span>
             </label>
             <button class="profile__attachments-btn btn btn--inactive" type="submit" id="submitPresent">Отправить</button>
           </form><span class="profile__modal-cross">x</span>
@@ -126,34 +126,58 @@
       </div>
       <div class="profile__modals-fail" id="failfModal" data-popup="fail">
         <div class="profile__fail">
-          <div class="profile__fail-title"><span class="title title--red">вы не справились</span></div>
-          <div class="profile__fail-wrap">
-            <p class="profile__fail-red">Вы набрали недостаточно баллов для прохождения в финал по направлению</p><span class="profile__fail-tag">Маркетинг</span>
+          <div class="profile__modals-title"><span class="title title--red">вы не справились</span></div>
+          <div class="profile__modals-wrap">
+            <p class="profile__fail-red profile__modals-text">Вы набрали недостаточно баллов для прохождения в финал по направлению</p><span class="profile__modals-tag">Маркетинг</span>
           </div>
-          <ul class="profile__fail-list">
-            <li class="profile__fail-item"><span class="profile__fail-reason">недостаточно креативности</span></li>
-            <li class="profile__fail-item"><span class="profile__fail-reason">низкая харизма</span></li>
+          <ul class="profile__modals-list">
+            <li class="profile__modals-item"><span class="profile__fail-reason">недостаточно креативности</span></li>
+            <li class="profile__modals-item"><span class="profile__fail-reason">низкая харизма</span></li>
           </ul>
-          <div class="profile__fail-wrap">
-            <p class="profile__fail-text">Вы ещё можете попробоватьсебя во втором выбранном вами направлении -</p><span class="profile__fail-tag profile__fail-tag--secondary">продажи</span>
+          <div class="profile__modals-wrap">
+            <p class="profile__fail-text profile__modals-text">Вы ещё можете попробоватьсебя во втором выбранном вами направлении -</p><span class="profile__modals-tag profile__fail-tag--secondary">продажи</span>
           </div>
-          <div class="profile__fail-buttons"><span class="profile__fail-text">Продолжим?</span><a class="profile__fail-btn btn btn--active" href="#">Да, продолжить!     </a><a class="profile__fail-btn btn btn--white" href="#" id="btn-no">Нет, спасибо!</a></div><span class="profile__modal-cross">x</span>
+          <div class="profile__fail-buttons"><span class="profile__fail-text">Продолжим?</span><a class="profile__fail-btn btn btn--active" href="#">Да, продолжить!     </a><a class="profile__fail-btn btn btn--white btn-close" href="#">Нет, спасибо!</a></div><span class="profile__modal-cross">x</span>
         </div>
       </div>
       <div class="profile__modals-deadline" id="deadlineModal" data-popup="deadline">
         <div class="profile__fail">
-          <div class="profile__fail-title"><span class="title title--red">deadline</span></div>
-          <div class="profile__fail-wrap">
-            <p class="profile__fail-red">Вы не успели отправить свой проект на оценку в отведенное время</p>
+          <div class="profile__modals-title"><span class="title title--red">deadline</span></div>
+          <div class="profile__modals-wrap">
+            <p class="profile__fail-red profile__modals-text">Вы не успели отправить свой проект на оценку в отведенное время</p>
           </div><span class="profile__modal-cross">x</span>
         </div>
       </div>
       <div class="profile__modals-placeholder" id="placeholder" data-popup="placeholder">
         <div class="profile__fail">
-          <div class="profile__fail-title"><span class="title title--red">placeholder</span></div>
-          <div class="profile__fail-wrap">
+          <div class="profile__modals-title"><span class="title title--red">placeholder</span></div>
+          <div class="profile__modals-wrap">
             <p class="profile__fail-red">there's no design for this modal</p>
           </div><span class="profile__modal-cross">x                             </span>
+        </div>
+      </div>
+      <div class="profile__modals-success" id="successModal" data-popup="success">
+        <div class="profile__success">
+          <div class="profile__modals-title"><span class="title">отличная идея!</span></div>
+          <div class="profile__modals-wrap">
+            <p class="profile__modals-text">Вы набрали достаточно баллов для прохождения на следующий этап по направлению:</p><span class="profile__modals-tag">Маркетинг</span>
+          </div>
+          <p class="profile__modals-text profile__modals-center">Над чем еще нужно поработать:     </p>
+          <ul class="profile__modals-list">
+            <li class="profile__modals-item"><span class="profile__fail-reason">недостаточно креативности</span></li>
+            <li class="profile__modals-item"><span class="profile__fail-reason">низкая харизма</span></li>
+          </ul>
+          <div class="profile__modals-wrap">
+            <p class="profile__modals-text">Учтите это при подготовке расширенного описания вашей идеи и презентации.</p>
+          </div>
+          <div class="profile__modals-buttons"><a class="profile__continue-btn btn btn--active btn-close" href="#">Продолжить!</a></div><span class="profile__modal-cross">x</span>
+        </div>
+      </div>
+      <div class="profile__modals-finals" id="finalsModal" data-popup="final">
+        <div class="profile__finals">
+          <div class="profile__modals-title"><span class="title title">вы в финале!</span></div>
+          <p class="profile__modals-text profile__modals-center">Поздравляем! В течение семи дней Вы получите приглашение с указанием даты и времени финального этапа. Не пропустите его!        </p>
+          <div class="profile__modals-buttons"><a class="profile__continue-btn btn btn--active btn-close" href="#">Продолжить!</a></div><span class="profile__modal-cross">x                    </span>
         </div>
       </div>
     </div>
