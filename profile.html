@@ -87,7 +87,8 @@
             <div class="profile__attachments-title"><span class="profile__attachments-text title">назовите свой проект</span></div>
             <input class="profile__attachments-input" type="text" placeholder="Введите название проекта" required id="projectName" oninput="validateProject()">
             <div class="profile__attachments__files">
-              <div class="participant-info__files-docx hidden" id="docx">.DOCX</div><img class="participant-info__files-img hidden" src="" alt="Image" id="image">
+              <div class="participant-info__files-docx hidden" id="docx">.DOCX<span class="participant-info__files-delete" data-close="docx"></span></div>
+              <div class="participant-info__files-wrap hidden" id="imageWrap">    <img class="participant-info__files-img" src="" alt="Image" id="image"><span class="participant-info__files-delete" data-close="img"></span></div>
             </div>
             <label class="profile__attachments-label" id="labelDocx">
               <input class="profile__attachments-attach" type="file" name="pic" onchange="changeDocx(); validateProject();" required accept=".doc, .docx" id="docxInput">
@@ -109,8 +110,8 @@
             <div class="profile__attachments-title"><span class="profile__attachments-text title">проект: digital 3.0</span></div>
             <div class="profile__attachments-picture"></div>
             <div class="profile__attachments__files">
-              <div class="participant-info__files-docx hidden" id="docxPresentation">.DOCX</div>
-              <div class="participant-info__files-docx hidden" id="pptx">.PPTX</div>
+              <div class="participant-info__files-docx hidden" id="docxPresentation">.DOCX<span class="participant-info__files-delete" data-close="description"></span></div>
+              <div class="participant-info__files-docx hidden" id="pptx">.PPTX<span class="participant-info__files-delete" data-close="presentation"></span></div>
             </div>
             <label class="profile__attachments-label" id="labelDesc">
               <input class="profile__attachments-attach" type="file" name="pic" accept=".doc, .docx" onchange="changeDesc(); validatePresent();" required id="descInput">
