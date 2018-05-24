@@ -26,7 +26,7 @@
             </div>
           </div>
           <ul class="profile__list">
-            <li class="profile__item profile__item--success profile__item--description" data-item="step" id="interview" data-modal="success">
+            <li class="profile__item profile__item--success profile__item--description" data-item="step" id="interview" data-modal="fail">
               <div class="profile__title-wrap">
                 <h2 class="profile__item-title">1. Видеоинтервью</h2>
               </div>
@@ -143,9 +143,12 @@
       </div>
       <div class="profile__modals-deadline" id="deadlineModal" data-popup="deadline">
         <div class="profile__fail">
-          <div class="profile__modals-title"><span class="title title--red">deadline</span></div>
+          <div class="profile__modals-title"><span class="title title--red">Неудача!</span></div>
           <div class="profile__modals-wrap">
-            <p class="profile__fail-red profile__modals-text">Вы не успели отправить свой проект на оценку в отведенное время</p>
+            <p class="profile__fail-red profile__modals-text">К сожалению, Вы не успели подать свою идею по направлению <span class="profile__modals-tag">МАРКЕТИНГ</span> вовремя. Ждем вас в следующем году! </p>
+          </div>
+          <div class="profile__modals-buttons">
+            <button class="profile__continue-btn btn btn--active btn-close">Закрыть</button>
           </div><span class="profile__modal-cross">x</span>
         </div>
       </div>
@@ -183,6 +186,7 @@
       </div>
     </div>
     <script src="assets/js/plugins.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js" defer></script>
     <script src="assets/js/app.js" defer></script>
   </body>
 </html>
