@@ -23,10 +23,10 @@
           <div class="range__col column"><span class="range__period">Период</span>
             <div class="range__rate">
               <label class="range__label"> <span>c </span>
-                <input class="range__input" type="date">
+                <input class="range__input js-range-from" type="date" onchange="getData()" id="test" value="2018-05-01">
               </label>
               <label class="range__label"><span>по </span>
-                <input class="range__input" type="date">
+                <input class="range__input js-range-to" type="date" onchange="getData()" value="2018-06-01">
               </label>
             </div>
           </div>
@@ -36,13 +36,13 @@
             <div class="users__header"><span class="heading">Воронка участников</span>
               <div class="users__wrap">
                 <div class="users__selector text text">
-                  <select class="input--analytics">
+                  <select class="input--analytics js-user-selection" onchange="getData()">
                     <option value="Все направления">Все направления</option>
                     <option value="placeholder">placeholder</option>
                   </select>
                 </div>
                 <div class="users__selector text">
-                  <select class="input--analytics">
+                  <select class="input--analytics js-stream-selection" onchange="getData()">
                     <option value="Все направления">Все направления</option>
                     <option value="placeholder">placeholder</option>
                   </select>
@@ -50,54 +50,54 @@
               </div>
             </div>
             <div class="users__charts">
-              <div class="users__container">
+              <div class="users__container" data-chart="interview">
                 <div class="users__wrapper">
-                  <div class="users__chart"></div>
-                  <div class="ratio users__ratio"><span class="rate">100%</span></div>
+                  <div class="users__chart js-chart" id="chart"></div>
+                  <div class="ratio users__ratio"><span class="rate js-rate">100%</span></div>
                 </div>
                 <div class="users__info"><span class="text">Прошли видеоинтервью</span></div>
                 <div class="users__numbers">
-                  <div class="users__icon"></div><span class="users__text text">1200</span><span class="users__text text--red text">-25%</span>
+                  <div class="users__icon"></div><span class="users__text text" id="users">1200</span><span class="users__text text--red text js-odds">-25%</span>
                 </div>
               </div>
-              <div class="users__container">
+              <div class="users__container" data-chart="brief">
                 <div class="users__wrapper">
-                  <div class="users__chart"></div>
-                  <div class="ratio users__ratio"><span class="rate">100%</span></div>
+                  <div class="users__chart js-chart"></div>
+                  <div class="ratio users__ratio"><span class="rate js-rate">100%</span></div>
                 </div>
                 <div class="users__info"><span class="text">Отправили бриф</span></div>
                 <div class="users__numbers">
-                  <div class="users__icon"></div><span class="users__text text">1200</span><span class="users__text text--red text">-25%</span>
+                  <div class="users__icon"></div><span class="users__text text">1200</span><span class="users__text text--red text js-odds">-25%</span>
                 </div>
               </div>
-              <div class="users__container">
+              <div class="users__container" data-chart="presentationSent">
                 <div class="users__wrapper">
-                  <div class="users__chart"></div>
-                  <div class="ratio users__ratio"><span class="rate">100%</span></div>
+                  <div class="users__chart js-chart"></div>
+                  <div class="ratio users__ratio"><span class="rate js-rate">100%</span></div>
                 </div>
                 <div class="users__info"><span class="text">Прошли на этап презентация</span></div>
                 <div class="users__numbers">
-                  <div class="users__icon"></div><span class="users__text text">1200</span><span class="users__text text--red text">-25%</span>
+                  <div class="users__icon"></div><span class="users__text text js-passed">1200</span><span class="users__text text--red text js-odds">-25%</span>
                 </div>
               </div>
-              <div class="users__container">
+              <div class="users__container" data-chart="presentationPassed">
                 <div class="users__wrapper">
-                  <div class="users__chart"></div>
-                  <div class="ratio users__ratio"><span class="rate">100%</span></div>
+                  <div class="users__chart js-chart"></div>
+                  <div class="ratio users__ratio"><span class="rate js-rate">100%</span></div>
                 </div>
                 <div class="users__info"><span class="text">Отправили презентацию</span></div>
                 <div class="users__numbers">
-                  <div class="users__icon"></div><span class="users__text text">1200</span><span class="users__text text--red text">-25%</span>
+                  <div class="users__icon"></div><span class="users__text text">1200</span><span class="users__text text--red text js-odds">-25%</span>
                 </div>
               </div>
-              <div class="users__container">
+              <div class="users__container" data-chart="finals">
                 <div class="users__wrapper">
-                  <div class="users__chart"></div>
-                  <div class="ratio users__ratio"><span class="rate">100%</span></div>
+                  <div class="users__chart js-chart"></div>
+                  <div class="ratio users__ratio"><span class="rate js-rate">100%</span></div>
                 </div>
                 <div class="users__info"><span class="text">Прошли в финал</span></div>
                 <div class="users__numbers">
-                  <div class="users__icon"></div><span class="users__text text">1200</span><span class="users__text text--red text">-25%</span>
+                  <div class="users__icon"></div><span class="users__text text">1200</span><span class="users__text text--red text js-odds">-25%</span>
                 </div>
               </div>
             </div>
@@ -106,7 +106,7 @@
             <div class="users__header"><span class="heading">Менторы</span>
               <div class="users__wrap">
                 <div class="users__selector text">
-                  <select class="input--analytics">
+                  <select class="input--analytics js-mentor-selection" onchange="getData()">
                     <option value="Все направления">Все направления</option>
                     <option value="placeholder">placeholder</option>
                   </select>
@@ -114,31 +114,31 @@
               </div>
             </div>
             <div class="mentors">
-              <div class="mentors__container">
+              <div class="mentors__container" data-chart="briefMain">
                 <div class="mentors__wrapper">
-                  <div class="mentors__chart"></div>
-                  <div class="ratio mentors__ratio"><span class="rate">4000</span></div>
+                  <div class="mentors__chart js-chart"></div>
+                  <div class="ratio mentors__ratio"><span class="rate js-number">4000</span></div>
                 </div>
                 <div class="mentors__stream text">       <span class="mentors__info">Оценивал брифов: основной стрим             </span></div>
               </div>
-              <div class="mentors__container">
+              <div class="mentors__container" data-chart="presentationMain">
                 <div class="mentors__wrapper">
-                  <div class="mentors__chart"></div>
-                  <div class="ratio mentors__ratio"><span class="rate">4000</span></div>
+                  <div class="mentors__chart js-chart"></div>
+                  <div class="ratio mentors__ratio"><span class="rate js-number">4000</span></div>
                 </div>
                 <div class="mentors__stream text">       <span class="mentors__info">Оценивал презентации: основной стрим                  </span></div>
               </div>
-              <div class="mentors__container">
+              <div class="mentors__container" data-chart="briefSecondary">
                 <div class="mentors__wrapper">
-                  <div class="mentors__chart"></div>
-                  <div class="ratio mentors__ratio"><span class="rate">4000</span></div>
+                  <div class="mentors__chart js-chart"></div>
+                  <div class="ratio mentors__ratio"><span class="rate js-number">4000</span></div>
                 </div>
                 <div class="mentors__stream text">       <span class="mentors__info">Оценивал брифов: дополнительный стрим</span></div>
               </div>
-              <div class="mentors__container">
+              <div class="mentors__container" data-chart="presentationSecondary">
                 <div class="mentors__wrapper">
-                  <div class="mentors__chart"></div>
-                  <div class="ratio mentors__ratio"><span class="rate">4000</span></div>
+                  <div class="mentors__chart js-chart"></div>
+                  <div class="ratio mentors__ratio"><span class="rate js-number">4000</span></div>
                 </div>
                 <div class="mentors__stream text">       <span class="mentors__info">Оценивал презентации: дополнительный стрим</span></div>
               </div>
