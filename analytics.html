@@ -36,13 +36,13 @@
             <div class="users__header"><span class="heading">Воронка участников</span>
               <div class="users__wrap">
                 <div class="users__selector text text">
-                  <select class="input--analytics js-user-selection" onchange="getData()">
+                  <select class="input--analytics js-user-selection" onchange="getData(usersEvent)">
                     <option value="Все направления">Все направления</option>
                     <option value="placeholder">placeholder</option>
                   </select>
                 </div>
                 <div class="users__selector text">
-                  <select class="input--analytics js-stream-selection" onchange="getData()">
+                  <select class="input--analytics js-stream-selection" onchange="getData(usersEventStream)">
                     <option value="Все направления">Все направления</option>
                     <option value="placeholder">placeholder</option>
                   </select>
@@ -106,7 +106,7 @@
             <div class="users__header"><span class="heading">Менторы</span>
               <div class="users__wrap">
                 <div class="users__selector text">
-                  <select class="input--analytics js-mentor-selection" onchange="getData()">
+                  <select class="input--analytics js-mentor-selection" onchange="getData(mentorsEvent)">
                     <option value="Все направления">Все направления</option>
                     <option value="placeholder">placeholder</option>
                   </select>
