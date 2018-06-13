@@ -156,7 +156,7 @@
             <div class="users__header"><span class="heading">Вуз</span>
               <div class="users__wrap">
                 <div class="users__selector text">
-                  <select class="input--analytics" onchange="getDataCircles()">
+                  <select class="input--analytics" onchange="getDataCircles(universitiesEvent)">
                     <option value="Все направления">Все направления</option>
                     <option value="placeholder">placeholder</option>
                   </select>
@@ -171,7 +171,7 @@
             <div class="users__header"><span class="heading">Специальность</span>
               <div class="users__wrap">
                 <div class="users__selector text">
-                  <select class="input--analytics">
+                  <select class="input--analytics" onchange="getDataCircles(specialitiesEvent)">
                     <option value="Все направления">Все направления</option>
                     <option value="placeholder">placeholder</option>
                   </select>
@@ -191,7 +191,7 @@
           </div>
           <div class="stream__col column"><span class="heading">Направления (Дополнительный стрим)</span>
             <div class="stream__chart">
-              <canvas id="secondary-stream">                      </canvas>
+              <canvas id="secondary-stream"></canvas>
             </div>
           </div>
         </section>
